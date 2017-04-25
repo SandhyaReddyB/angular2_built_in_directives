@@ -1,4 +1,4 @@
-# angular2_directives
+# angular2_built_in_directives
 Example implements Angular built in directives
 
 Directives
