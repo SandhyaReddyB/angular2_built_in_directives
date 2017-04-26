@@ -23,6 +23,12 @@ Structural Directives
 *ngFor
 	<div *ngFor = "let hit of hits; let i=index">{{hit}}</div>
 *ngSwitch
+  <div [ngSwitch]="hero?.emotion">
+    <happy-hero    *ngSwitchCase="'happy'"    [hero]="hero"></happy-hero>
+    <sad-hero      *ngSwitchCase="'sad'"      [hero]="hero"></sad-hero>
+    <confused-hero *ngSwitchCase="'confused'" [hero]="hero"></confused-hero>
+    <unknown-hero  *ngSwitchDefault           [hero]="hero"></unknown-hero>
+  </div>
 
 
 Attribute Directives
@@ -47,6 +53,9 @@ ngClass
 
 <p [ngClass]="{online: serverStatus=='online'}">Server status is {{serverStatus}}</p>
 
+Note: You can apply *many attribute directives* to one host element. You can only apply *one structural directive* to a host element.
+====
+
 Excercise
 ===========
 Create a button with name "Display Details"
@@ -55,6 +64,5 @@ Toggle the displaying of that paragraph with the button created in the first ste
 Log all button clicks in an array and output the array below the paragraph
 Starting 5th log item, give all future log items blue background with [ngStyle] and white color with [ngClass]
   
-
 
 
